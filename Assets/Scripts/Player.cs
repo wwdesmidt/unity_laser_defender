@@ -10,12 +10,16 @@ public class Player : MonoBehaviour
 
     [SerializeField] GameObject lazerBulletPrefab;
 
-    [SerializeField] float lazerBulletSpeed = 10f; 
+    [SerializeField] float lazerBulletSpeed = 10f;
+
+    [SerializeField] float fireSpeed = 0.5f;
 
     float xMin;
     float xMax;
     float yMin;
     float yMax;
+
+    Coroutine firing;
 
     // Use this for initialization
     void Start ()
@@ -38,9 +42,25 @@ public class Player : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
+            firing = StartCoroutine(fireContinuously());
+        }
+
+        if(Input.GetButtonUp("Fire1"))
+        {
+            StopCoroutine(firing);
+        }
+    }
+
+    private IEnumerator fireContinuously()
+    {
+        while(true)
+        {
             GameObject lazerBullet = Instantiate(lazerBulletPrefab, transform.position, Quaternion.identity) as GameObject;
 
             lazerBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, lazerBulletSpeed);
+
+            yield return new WaitForSeconds(fireSpeed);
+
         }
     }
 
