@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\BulletEater.cs" />
     <Compile Include="Assets\Scripts\EnemyPathing.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\WaveConfig.cs" />
     <None Include="Assets\zzz\Spritesheet\sheet.xml" />
     <None Include="Assets\zzz\license.txt" />
     <Reference Include="UnityEditor.StandardEvents">
