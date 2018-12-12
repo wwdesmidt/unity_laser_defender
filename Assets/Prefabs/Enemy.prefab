@@ -52,10 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c361935cef8f52f499ec7a42e53a9015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 4977305056753422, guid: c590e574f7d0df143acbc8254ca36a4c, type: 2}
-  - {fileID: 4131762250455096, guid: c590e574f7d0df143acbc8254ca36a4c, type: 2}
-  - {fileID: 4330803052503386, guid: c590e574f7d0df143acbc8254ca36a4c, type: 2}
+  waveConfig: {fileID: 11400000, guid: 127bcd58276f42d4095de44f7eb9b752, type: 2}
+  enemyMovementSpeed: 5
 --- !u!212 &212123733406965208
 SpriteRenderer:
   m_ObjectHideFlags: 1
