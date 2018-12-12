@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class EnemyPathing : MonoBehaviour
 {
-    [SerializeField] WaveConfig waveConfig;
+    WaveConfig waveConfig;
     List<Transform> waypoints;
-    [SerializeField] float enemyMovementSpeed = 2f;
+    float enemyMovementSpeed;
 
     int currentWaypoint = 0;
 
     void Start()
     {
+        enemyMovementSpeed = waveConfig.getEnemyMoveSpeed();
         waypoints = waveConfig.getWaypoints();
         currentWaypoint = 0;
         transform.position = waypoints[currentWaypoint].transform.position;
